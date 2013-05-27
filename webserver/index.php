@@ -1,3 +1,3 @@
 <?php
-header("Location: http://images.punyman.com/gallery");
+header("Location: http://".$_SERVER['HTTP_HOST']."/gallery");
 ?>
