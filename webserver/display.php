@@ -1,10 +1,10 @@
 <?php
 if (!isset($_GET["img"])){
-header('Location: http://images.punyman.com/uploads/404.png'); 
+header('Location: http://'.$_SERVER['HTTP_HOST'].'/uploads/404.png'); 
 }
  
 if (!file_exists("uploads/".$_GET["img"])){
-header('Location: http://images.punyman.com/uploads/404.png'); 
+header('Location: http://'.$_SERVER['HTTP_HOST'].'/uploads/404.png'); 
 }
 
 $imgtype = pathinfo("uploads/".$_GET["img"], PATHINFO_EXTENSION);
@@ -16,8 +16,8 @@ if (isset($_GET["h"])){
 $height = '&h='.$_GET["h"];
 }
 if (isset($_GET["raw"])){
-	if (isset($width) OR isset($height)){
-		$image = file_get_contents("/thumb.php?src=uploads/".$_GET["img"].$width.$height."&q=90");
+	if (isset($width) || isset($height)){
+		$image = file_get_contents("http://".$_SERVER['HTTP_HOST']."/thumb.php?src=uploads/".$_GET["img"].$width.$height."&q=90");
 		
 	}else{
 		$image = file_get_contents("uploads/".$_GET["img"]); 
