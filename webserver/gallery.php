@@ -8,6 +8,9 @@ $filetypes = array(
     'gif' => 'gif',
 );
 session_start();
+if($password == "password"){
+die('<strong>Change the default password at gallery.php</strong>');
+}
 if($_POST["key"] == $password){
 $_SESSION['login'] = TRUE;
 }
