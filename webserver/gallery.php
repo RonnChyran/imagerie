@@ -28,15 +28,10 @@ header('Location: http://'.$_SERVER['HTTP_HOST'].'/gallery');
 <!--fancybox js-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/fancybox.css?v=2.1.4" type="text/css" media="screen" />
-<script type="text/javascript" src="/css/fancybox.js?v=2.1.4"></script>
+<script type="text/javascript" src="/js/fancybox.js?v=2.1.4"></script>
 <!--/fancybox js-->
 
-<script type="text/javascript">
-function focusLogin()
-{
-     document.getElementById("keyinput").focus();
-}
-</script>
+<script type="text/javascript" src="/js/gallery.js"></script>
 
 </head>
 
@@ -54,30 +49,6 @@ Imagerie - Gallery
 <a class="logout" href="?logout">Logout</a>
 </span>
 </header>
-
-<!--fancybox js-->
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".fancybox")
-		.attr('rel', 'gallery')
-		.fancybox({
-			'arrows' : false,
-			'closeBtn' : false,
-			beforeLoad: function() {
-				this.title = $(this.element).attr('caption');
-			}
-		});
-});
-</script>
-<script type="text/javascript">
-function deleteFile(filename)
-{	
-if (confirm('Are you sure you want to delete '+filename+' ?\nThis can only be undone manually')) { 
- window.location.href = 'trash.php?f='+filename;
-}
-}
-</script>
-<!--/fancybox js-->
 
 <?php
 if ($files !== false) 
@@ -99,7 +70,7 @@ if ($files !== false)
 die();
 }else{
 ?>
-<body class="display" onload="focusLogin()">
+<body class="display">
 <header>
 <span class="align-right">
 Imagerie - Gallery
