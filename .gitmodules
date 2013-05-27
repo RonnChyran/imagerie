@@ -1,0 +1,6 @@
+[submodule "gyazo/windows"]
+	path = gyazo/windows
+	url = https://github.com/gyazo/Gyazowin.git
+[submodule "gyazo/mac"]
+	path = gyazo/mac
+	url = https://github.com/gyazo/Gyazo.git
