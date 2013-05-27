@@ -4,3 +4,6 @@
 [submodule "gyazo/mac"]
 	path = gyazo/mac
 	url = https://github.com/gyazo/Gyazo.git
+[submodule "gyazo/linux"]
+	path = gyazo/linux
+	url = https://github.com/gyazo/Gyazo-for-Linux.git
