@@ -1,7 +1,16 @@
 Options +FollowSymlinks -MultiViews
 RewriteEngine On
 RewriteBase /
-RewriteRule ^uploads/([^.]+)\.(png|jpg|gif|bmp)  /index.php?img=$1.$2  [L,NC,QSA]
- 
- 
+
+#Rewrite images to display script
+RewriteRule ^uploads/([^.]+)\.(png|jpg|gif|bmp)  /display.php?img=$1.$2  [L,NC,QSA]
+
+
+#Remove .php extension.
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R,L,NC]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]
+
+#Point 404 to 404.png
 ErrorDocument 404 /uploads/404.png
