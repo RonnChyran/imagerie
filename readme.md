@@ -50,6 +50,8 @@ Compile with Visual Studio 2008.
 ### Mac
 Replace `gyazo.com` in [Line 50](https://github.com/gyazo/Gyazo/blob/master/Gyazo/script#L50) of `script` with your (sub)domain name. Replace `/upload.cgi` in [Line 51](https://github.com/gyazo/Gyazo/blob/master/Gyazo/script#L51) with `/gyazo.php`, or whatever you named it in the step beforehand.
 
+Turn off code signing in Xcode if you do not have a certificate.
+
 Compile with Xcode
 
 ### Linux 
